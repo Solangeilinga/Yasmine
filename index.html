@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire !</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #FFF8F0;
+            background-image:
+                radial-gradient(circle at 20% 80%, #ffb6c1 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, #ffd1dc 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, #ff1493 0%, transparent 50%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            animation: backgroundShift 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes backgroundShift {
+            0% {
+                background-color: #7e0441;
+            }
+
+            50% {
+                background-color: #ff1493;
+            }
+
+            100% {
+                background-color: #ff69b4;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 3px 3px 0px #ff1493, 6px 6px 0px #ff69b4;
+            margin-bottom: 20px;
+            animation: bounce 1.5s infinite, colorChange 3s infinite alternate;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #2f2727;
+            }
+
+            50% {
+                color: #010809;
+            }
+
+            100% {
+                color: #fff;
+            }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #080801;
+            margin-bottom: 20px;
+            animation: glow 2s infinite alternate;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #11110c, 0 0 10px #11110f;
+            }
+
+            100% {
+                text-shadow: 0 0 10px #13130f, 0 0 20px #10100d, 0 0 30px #0e0e0d;
+            }
+        }
+
+        .hero .name-input {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            margin: 20px 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(1deg);
+            }
+
+            75% {
+                transform: rotate(-1deg);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-15px);
+            }
+
+            60% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            animation: fall linear infinite;
+            z-index: 1000;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-100vh) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.98);
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 25px;
+            border: 4px solid #ff69b4;
+            box-shadow: 0 15px 35px rgba(255, 20, 147, 0.3);
+            backdrop-filter: blur(10px);
+            animation: sectionFloat 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes sectionFloat {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .section h2 {
+            color: #ff1493;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
+            animation: titlePulse 3s infinite;
+        }
+
+        @keyframes titlePulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid #ff69b4;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.5);
+        }
+
+        .movie-synopsis {
+            background: rgba(255, 255, 255, 0.95);
+            border: 4px solid #ff69b4;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .movie-synopsis::before {
+            content: "🎬";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .synopsis-content h3 {
+            color: #ff1493;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
+        }
+
+        .synopsis-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .synopsis-text strong {
+            color: #ff1493;
+            font-weight: bold;
+        }
+
+        .synopsis-text em {
+            color: #ff69b4;
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        .movie-rating {
+            text-align: center;
+            background: #ffb6c1;
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 20px;
+            color: #ff1493;
+            font-weight: bold;
+            border: 2px solid #ff69b4;
+        }
+
+        .words-rain-container {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border: 3px solid #ff69b4;
+            border-radius: 20px;
+            background: rgba(255, 182, 193, 0.1);
+        }
+
+        .falling-word {
+            position: absolute;
+            color: #ff1493;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(255, 20, 147, 0.5);
+            animation: fallWord linear infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .falling-word:hover {
+            transform: scale(1.5);
+            color: #ffff00;
+            text-shadow: 2px 2px 4px rgba(255, 255, 0, 0.8);
+        }
+
+        @keyframes fallWord {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(350px);
+                opacity: 0;
+            }
+        }
+
+        .surprise-btn {
+            background: #dddfd9;
+            border: 4px solid #ff1493;
+            padding: 25px 50px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            color: #ff1493;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(255, 0, 225, 0.4);
+            transition: all 0.3s ease;
+            animation: surprisePulse 1.5s infinite, surpriseShake 3s infinite;
+            display: block;
+            margin: 20px auto;
+        }
+
+        @keyframes surprisePulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes surpriseShake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-2px);
+            }
+
+            75% {
+                transform: translateX(2px);
+            }
+        }
+
+        .surprise-btn:hover {
+            transform: scale(1.2) rotate(5deg);
+            background: #ff1493;
+            color: #ffff00;
+            box-shadow: 0 20px 40px rgba(255, 20, 147, 0.6);
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .popup-content {
+            background: #ff69b4;
+            border: 5px solid #ffff00;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+            max-width: 500px;
+            margin: 20px;
+            position: relative;
+            animation: popupAppear 0.7s ease, popupPulse 2s infinite;
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.5);
+        }
+
+        @keyframes popupPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes popupAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .popup-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .popup-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            background: #ffff00;
+            border: 3px solid white;
+            color: #ff1493;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: closeButtonGlow 2s infinite alternate;
+        }
+
+        @keyframes closeButtonGlow {
+            0% {
+                box-shadow: 0 0 5px #ffff00;
+            }
+
+            100% {
+                box-shadow: 0 0 15px #ffff00, 0 0 25px #ffff00;
+            }
+        }
+
+        .close-btn:hover {
+            background: white;
+            color: #ff69b4;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .hero .name-input,
+            .hero .btn {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+
+            .gallery img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <h1 id="title">🎉 Happy birthday my baaaaby💖! 🎂</h1>
+        <p style="color: white; font-size: 1.3rem; margin-bottom: 20px;">Même si je ne suis pas là pour t'amener au
+            glacier, j'ai un pétit temps pour te faire ceci </p>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <div class="gallery">
+                <img src="a.jpg" alt="Souvenir 1">
+                <img src="b.jpg" alt="Souvenir 2">
+                <img src="c.jpg" alt="Souvenir 3">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="movie-synopsis">
+                <div class="synopsis-content">
+                    <h3>🌟 "Yasmine : L'Héroïne du Quotidien" 🌟</h3>
+
+                    <p class="synopsis-text">
+                        Dans un monde où tout semble parfois vouloir ralentir, <strong>Yasmine</strong> avance toujours,
+                        avec une force intérieure incroyable. Chaque défi devient pour elle une occasion de grandir,
+                        chaque obstacle un tremplin vers ses rêves.
+                    </p>
+                    <p>Chaque défi, elle le transforme en leçon. Chaque chute, en élan. Elle ne se contente pas de
+                        traverser les épreuves, elle les transcende — avec grâce, courage et une dignité admirable.
+                    </p>
+                    <p class="synopsis-text">
+                        Son courage éclaire le chemin, et sa détermination montre que, même dans les moments les plus
+                        durs, la lumière peut toujours briller.
+                    </p>
+
+                    <p class="synopsis-text">
+                        <em>Si la vie était un film, elle en serait l’héroïne qu’on n’oublie jamais. Celle qui, sans
+                            bruit, inspire tout autour d’elle. Par sa résilience. Par son cœur immense. Par cette façon
+                            unique de toujours choisir la vie, même quand elle est lourde..</em>
+                    </p>
+                    <div class="movie-rating">
+                        ⭐⭐⭐⭐⭐ "Je t'aime !"
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="words-rain-container" id="wordsRainContainer">
+                <p style="text-align: center; color: #ff1493; font-size: 1.2rem; margin-bottom: 20px;">
+                    Chaque mot qui apparaît te décrit parfaitement ! 💖
+                </p>
+            </div>
+        </div>
+
+        <div class="section" style="text-align: center;">
+            <button class="surprise-btn" onclick="showSurprise()">Clique!</button>
+        </div>
+    </div>
+
+    <div class="popup" id="surprisePopup">
+        <div class="popup-content">
+            <p>Joyeux anniversaire ma chère Yasmine ! 🌟 Cette journée spéciale est l'occasion parfaite pour te dire à
+                quel point tu comptes pour moi. Tu es bien plus qu'une amie, tu es une sœur de cœur 🤍👭!</p>
+            <p>
+                Peu importe les hauts et les bas 🌧🌈, n'oublie jamais à quel point tu es forte, courageuse et capable
+                de tout surmonter 💫. Je crois en toi de tout cœur ❤. </p>
+            <p>Que cette nouvelle année t'apporte tout le bonheur que tu mérites, et que nos fous rires continuent
+                encore longtemps. Bisou! 💕✨</p>
+            <button class="close-btn" onclick="closeSurprise()">Fermer</button>
+        </div>
+    </div>
+
+    <script>
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = getRandomColor();
+            confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+
+        function getRandomColor() {
+            const colors = ['#ff69b4', '#ffff00', '#ff1493', '#ffd1dc', '#ffb6c1', '#ff6347', '#98fb98', '#87ceeb'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        let wordsRainInterval;
+        const sweetWords = ['gentille', 'Résiliente', 'courageuse', 'Audacieuse', 'Déterminée', 'Intélligente', 'Persévérante', 'loyale', 'rayonnante', 'attentionnée', 'inspirante', 'forte'];
+
+        function startWordsRain() {
+            const container = document.getElementById('wordsRainContainer');
+
+            wordsRainInterval = setInterval(() => {
+                const word = document.createElement('div');
+                word.className = 'falling-word';
+                word.textContent = sweetWords[Math.floor(Math.random() * sweetWords.length)];
+                word.style.left = Math.random() * (container.offsetWidth - 100) + 'px';
+                word.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                word.style.fontSize = (Math.random() * 0.5 + 1) + 'rem';
+
+                const colors = ['#ff1493', '#ff69b4', '#ffb6c1', '#ff6347'];
+                word.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+                container.appendChild(word);
+
+                setTimeout(() => {
+                    if (word.parentNode) {
+                        word.remove();
+                    }
+                }, 7000);
+            }, 800);
+        }
+
+        function showSurprise() {
+            document.getElementById('surprisePopup').style.display = 'flex';
+            createConfetti();
+            createConfetti();
+            createConfetti();
+        }
+
+        function closeSurprise() {
+            document.getElementById('surprisePopup').style.display = 'none';
+        }
+
+        setTimeout(startWordsRain, 2000);
+
+        window.addEventListener('click', function (e) {
+            const popup = document.getElementById('surprisePopup');
+            if (e.target === popup) {
+                closeSurprise();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -41,22 +41,24 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
         }
 
         .hero {
             text-align: center;
-            padding: 80px 20px;
+            padding: 40px 15px;
             position: relative;
             overflow: hidden;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.2rem;
             color: #fff;
-            text-shadow: 3px 3px 0px #ff1493, 6px 6px 0px #ff69b4;
-            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px #ff1493, 4px 4px 0px #ff69b4;
+            margin-bottom: 15px;
             animation: bounce 1.5s infinite, colorChange 3s infinite alternate;
+            line-height: 1.2;
+            padding: 0 10px;
         }
 
         @keyframes colorChange {
@@ -74,11 +76,13 @@
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1rem;
             color: #080801;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             animation: glow 2s infinite alternate;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            padding: 0 10px;
+            line-height: 1.4;
         }
 
         @keyframes glow {
@@ -94,12 +98,14 @@
         .hero .name-input {
             background: rgba(255, 255, 255, 0.9);
             border: none;
-            padding: 15px 25px;
-            font-size: 1.2rem;
+            padding: 12px 20px;
+            font-size: 1rem;
             border-radius: 30px;
-            margin: 20px 10px;
+            margin: 15px 0;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 300px;
         }
 
 
@@ -130,18 +136,18 @@
             }
 
             40% {
-                transform: translateY(-15px);
+                transform: translateY(-10px);
             }
 
             60% {
-                transform: translateY(-8px);
+                transform: translateY(-5px);
             }
         }
 
         .confetti {
             position: fixed;
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             background: #ff6b6b;
             animation: fall linear infinite;
             z-index: 1000;
@@ -159,11 +165,11 @@
 
         .section {
             background: rgba(255, 255, 255, 0.98);
-            margin: 30px 0;
-            padding: 40px;
-            border-radius: 25px;
-            border: 4px solid #ff69b4;
-            box-shadow: 0 15px 35px rgba(255, 20, 147, 0.3);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 15px;
+            border: 3px solid #ff69b4;
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.3);
             backdrop-filter: blur(10px);
             animation: sectionFloat 4s ease-in-out infinite alternate;
         }
@@ -174,16 +180,16 @@
             }
 
             100% {
-                transform: translateY(-10px);
+                transform: translateY(-5px);
             }
         }
 
         .section h2 {
             color: #ff1493;
-            font-size: 2.8rem;
-            margin-bottom: 30px;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
+            text-shadow: 1px 1px 2px rgba(255, 20, 147, 0.3);
             animation: titlePulse 3s infinite;
         }
 
@@ -195,39 +201,39 @@
             }
 
             50% {
-                transform: scale(1.05);
+                transform: scale(1.03);
             }
         }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            padding: 15px 0;
         }
 
         .gallery img {
             width: 100%;
-            height: 300px;
+            height: 180px;
             object-fit: cover;
-            border-radius: 15px;
-            border: 3px solid #ff69b4;
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+            border-radius: 12px;
+            border: 2px solid #ff69b4;
+            box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery img:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.5);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
         }
 
         .movie-synopsis {
             background: rgba(255, 255, 255, 0.95);
-            border: 4px solid #ff69b4;
-            border-radius: 20px;
-            padding: 30px;
-            margin: 20px 0;
-            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+            border: 3px solid #ff69b4;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -235,9 +241,9 @@
         .movie-synopsis::before {
             content: "🎬";
             position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 2rem;
+            top: 8px;
+            right: 12px;
+            font-size: 1.5rem;
             animation: rotate 3s linear infinite;
         }
 
@@ -253,18 +259,19 @@
 
         .synopsis-content h3 {
             color: #ff1493;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             text-align: center;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(255, 20, 147, 0.3);
+            line-height: 1.3;
         }
 
         .synopsis-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            line-height: 1.5;
             color: #333;
-            margin-bottom: 15px;
-            text-align: justify;
+            margin-bottom: 12px;
+            text-align: left;
         }
 
         .synopsis-text strong {
@@ -275,34 +282,36 @@
         .synopsis-text em {
             color: #ff69b4;
             font-style: italic;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
         }
 
         .movie-rating {
             text-align: center;
             background: #ffb6c1;
-            padding: 15px;
-            border-radius: 15px;
-            margin-top: 20px;
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 15px;
             color: #ff1493;
             font-weight: bold;
             border: 2px solid #ff69b4;
+            font-size: 0.95rem;
         }
 
         .words-rain-container {
             position: relative;
-            height: 300px;
+            height: 200px;
             overflow: hidden;
-            border: 3px solid #ff69b4;
-            border-radius: 20px;
+            border: 2px solid #ff69b4;
+            border-radius: 15px;
             background: rgba(255, 182, 193, 0.1);
+            padding: 10px;
         }
 
         .falling-word {
             position: absolute;
             color: #ff1493;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
             text-shadow: 1px 1px 2px rgba(255, 20, 147, 0.5);
             animation: fallWord linear infinite;
             cursor: pointer;
@@ -310,14 +319,14 @@
         }
 
         .falling-word:hover {
-            transform: scale(1.5);
+            transform: scale(1.3);
             color: #ffff00;
-            text-shadow: 2px 2px 4px rgba(255, 255, 0, 0.8);
+            text-shadow: 1px 1px 3px rgba(255, 255, 0, 0.8);
         }
 
         @keyframes fallWord {
             from {
-                transform: translateY(-50px);
+                transform: translateY(-40px);
                 opacity: 0;
             }
 
@@ -330,26 +339,28 @@
             }
 
             to {
-                transform: translateY(350px);
+                transform: translateY(240px);
                 opacity: 0;
             }
         }
 
         .surprise-btn {
             background: #dddfd9;
-            border: 4px solid #ff1493;
-            padding: 25px 50px;
-            font-size: 1.6rem;
+            border: 3px solid #ff1493;
+            padding: 18px 35px;
+            font-size: 1.2rem;
             font-weight: bold;
-            border-radius: 60px;
+            border-radius: 50px;
             cursor: pointer;
             color: #ff1493;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 15px 30px rgba(255, 0, 225, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 0, 225, 0.4);
             transition: all 0.3s ease;
             animation: surprisePulse 1.5s infinite, surpriseShake 3s infinite;
             display: block;
             margin: 20px auto;
+            width: 90%;
+            max-width: 300px;
         }
 
         @keyframes surprisePulse {
@@ -360,7 +371,7 @@
             }
 
             50% {
-                transform: scale(1.1);
+                transform: scale(1.05);
             }
         }
 
@@ -381,10 +392,10 @@
         }
 
         .surprise-btn:hover {
-            transform: scale(1.2) rotate(5deg);
+            transform: scale(1.1) rotate(3deg);
             background: #ff1493;
             color: #ffff00;
-            box-shadow: 0 20px 40px rgba(255, 20, 147, 0.6);
+            box-shadow: 0 12px 25px rgba(255, 20, 147, 0.6);
         }
 
         .popup {
@@ -398,20 +409,21 @@
             justify-content: center;
             align-items: center;
             z-index: 2000;
+            padding: 15px;
         }
 
         .popup-content {
             background: #ff69b4;
-            border: 5px solid #ffff00;
-            padding: 40px;
-            border-radius: 25px;
+            border: 4px solid #ffff00;
+            padding: 25px;
+            border-radius: 20px;
             text-align: center;
             color: white;
-            max-width: 500px;
-            margin: 20px;
+            max-width: 100%;
+            margin: 0;
             position: relative;
             animation: popupAppear 0.7s ease, popupPulse 2s infinite;
-            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.5);
+            box-shadow: 0 12px 25px rgba(255, 105, 180, 0.5);
         }
 
         @keyframes popupPulse {
@@ -422,14 +434,14 @@
             }
 
             50% {
-                transform: scale(1.02);
+                transform: scale(1.01);
             }
         }
 
         @keyframes popupAppear {
             from {
                 opacity: 0;
-                transform: scale(0.7);
+                transform: scale(0.8);
             }
 
             to {
@@ -439,24 +451,25 @@
         }
 
         .popup-content h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
         }
 
         .popup-content p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
         }
 
         .close-btn {
             background: #ffff00;
-            border: 3px solid white;
+            border: 2px solid white;
             color: #ff1493;
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 10px 20px;
+            border-radius: 25px;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: bold;
             transition: all 0.3s ease;
             animation: closeButtonGlow 2s infinite alternate;
@@ -468,42 +481,99 @@
             }
 
             100% {
-                box-shadow: 0 0 15px #ffff00, 0 0 25px #ffff00;
+                box-shadow: 0 0 12px #ffff00, 0 0 20px #ffff00;
             }
         }
 
         .close-btn:hover {
             background: white;
             color: #ff69b4;
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
-        @media (max-width: 768px) {
+        /* Media queries pour différentes tailles d'écran */
+        @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
+                text-shadow: 1px 1px 0px #ff1493, 3px 3px 0px #ff69b4;
             }
-
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
             .section {
-                padding: 20px;
+                padding: 15px;
+                margin: 15px 0;
             }
-
+            
             .section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .gallery img {
+                height: 200px;
+            }
+            
+            .synopsis-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .synopsis-text {
+                font-size: 0.9rem;
+            }
+            
+            .words-rain-container {
+                height: 180px;
+            }
+            
+            .surprise-btn {
+                font-size: 1.1rem;
+                padding: 15px 25px;
+            }
+            
+            .popup-content {
+                padding: 20px 15px;
+            }
+            
+            .popup-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .popup-content p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .hero h1 {
                 font-size: 2rem;
             }
-
-            .hero .name-input,
-            .hero .btn {
-                width: 100%;
-                margin: 10px 0;
-            }
-
+            
             .gallery {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 15px;
+                grid-template-columns: repeat(2, 1fr);
             }
+        }
 
-            .gallery img {
-                height: 150px;
+        @media (min-width: 769px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Correction pour l'animation sur mobile */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
@@ -512,8 +582,7 @@
 <body>
     <div class="hero">
         <h1 id="title">🎉 Happy birthday my baaaaby💖! 🎂</h1>
-        <p style="color: white; font-size: 1.3rem; margin-bottom: 20px;">Même si je ne suis pas là pour t'amener au
-            glacier, j'ai un pétit temps pour te faire ceci </p>
+        <p style="color: white; font-size: 1.1rem; margin-bottom: 15px;">Même si je ne suis pas là pour t'amener au glacier, j'ai un pétit temps pour te faire ceci</p>
     </div>
 
     <div class="container">
@@ -535,7 +604,7 @@
                         avec une force intérieure incroyable. Chaque défi devient pour elle une occasion de grandir,
                         chaque obstacle un tremplin vers ses rêves.
                     </p>
-                    <p>Chaque défi, elle le transforme en leçon. Chaque chute, en élan. Elle ne se contente pas de
+                    <p class="synopsis-text">Chaque défi, elle le transforme en leçon. Chaque chute, en élan. Elle ne se contente pas de
                         traverser les épreuves, elle les transcende — avec grâce, courage et une dignité admirable.
                     </p>
                     <p class="synopsis-text">
@@ -557,7 +626,7 @@
 
         <div class="section">
             <div class="words-rain-container" id="wordsRainContainer">
-                <p style="text-align: center; color: #ff1493; font-size: 1.2rem; margin-bottom: 20px;">
+                <p style="text-align: center; color: #ff1493; font-size: 1rem; margin-bottom: 15px;">
                     Chaque mot qui apparaît te décrit parfaitement ! 💖
                 </p>
             </div>
@@ -570,6 +639,7 @@
 
     <div class="popup" id="surprisePopup">
         <div class="popup-content">
+            <h3>Joyeux Anniversaire !</h3>
             <p>Joyeux anniversaire ma chère Yasmine ! 🌟 Cette journée spéciale est l'occasion parfaite pour te dire à
                 quel point tu comptes pour moi. Tu es bien plus qu'une amie, tu es une sœur de cœur 🤍👭!</p>
             <p>
@@ -612,9 +682,9 @@
                 const word = document.createElement('div');
                 word.className = 'falling-word';
                 word.textContent = sweetWords[Math.floor(Math.random() * sweetWords.length)];
-                word.style.left = Math.random() * (container.offsetWidth - 100) + 'px';
+                word.style.left = Math.random() * (container.offsetWidth - 80) + 'px';
                 word.style.animationDuration = (Math.random() * 3 + 4) + 's';
-                word.style.fontSize = (Math.random() * 0.5 + 1) + 'rem';
+                word.style.fontSize = (Math.random() * 0.4 + 0.9) + 'rem';
 
                 const colors = ['#ff1493', '#ff69b4', '#ffb6c1', '#ff6347'];
                 word.style.color = colors[Math.floor(Math.random() * colors.length)];
@@ -648,6 +718,9 @@
                 closeSurprise();
             }
         });
+
+        // Optimisation pour le tactile
+        document.addEventListener('touchstart', function() {}, {passive: true});
     </script>
 </body>
 
